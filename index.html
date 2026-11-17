@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GLAMOUR HAIRSALON - Cluj-Napoca</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+        body { 
+            background: linear-gradient(180deg, #18181b 0%, #09090b 100%); 
+            color: #ffffff; 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            min-height: 100vh; 
+            padding: 24px 16px; 
+        }
+        .container { width: 100%; max-width: 420px; display: flex; flex-direction: column; align-items: center; }
+        .avatar { 
+            width: 96px; height: 96px; border-radius: 50%; 
+            border: 3px solid #e2b857; 
+            object-fit: cover; margin-bottom: 14px; 
+            box-shadow: 0 8px 20px rgba(226, 184, 87, 0.25);
+        }
+        h1 { font-size: 22px; font-weight: 800; letter-spacing: 0.5px; text-align: center; margin-bottom: 6px; }
+        .address { font-size: 13px; color: #a1a1aa; text-align: center; margin-bottom: 12px; }
+        .schedule-box {
+            background-color: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 10px 14px;
+            width: 100%;
+            margin-bottom: 22px;
+            font-size: 13px;
+            color: #e4e4e7;
+            text-align: center;
+            line-height: 1.5;
+        }
+        .schedule-box strong { color: #e2b857; }
+        .btn { 
+            width: 100%; background-color: #27272a; color: #ffffff; 
+            border: 1px solid #3f3f46; padding: 16px 18px; margin-bottom: 12px; 
+            border-radius: 14px; font-size: 15px; font-weight: 600; 
+            text-decoration: none; display: flex; align-items: center; 
+            justify-content: space-between; cursor: pointer;
+        }
+        .btn-left { display: flex; align-items: center; gap: 12px; }
+        .icon { font-size: 20px; }
+        .btn-gold { 
+            background: linear-gradient(135deg, #e2b857 0%, #b88a28 100%); 
+            color: #09090b; border: none; font-weight: 700;
+        }
+        #services-panel {
+            display: none;
+            width: 100%;
+            background-color: #1f1f23;
+            border: 1px solid #3f3f46;
+            border-radius: 14px;
+            padding: 16px;
+            margin-bottom: 14px;
+        }
+        #services-panel h3 { font-size: 16px; color: #e2b857; margin-bottom: 12px; border-bottom: 1px solid #3f3f46; padding-bottom: 6px; }
+        .service-item { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px dashed #333; font-size: 14px; }
+        .price { font-weight: 700; color: #e2b857; }
+        .quick-links { display: flex; gap: 10px; width: 100%; margin-top: 8px; }
+        .btn-small { 
+            flex: 1; background-color: #18181b; border: 1px solid #3f3f46; 
+            color: #d4d4d8; padding: 12px; border-radius: 12px; 
+            text-align: center; text-decoration: none; font-size: 13px; font-weight: 600; 
+        }
+        .footer { margin-top: 28px; font-size: 11px; color: #71717a; text-align: center; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?w=300&auto=format&fit=crop&q=80" alt="Glamour Hairsalon" class="avatar">
+        <h1>GLAMOUR HAIRSALON</h1>
+        <p class="address">📍 Calea Dorobanților 105, Cluj-Napoca</p>
+        <div class="schedule-box">
+            <strong>🕒 Program de funcționare:</strong><br>
+            Luni – Vineri: 08:00 – 20:00<br>
+            Sâmbătă: 08:00 – 15:00 | Duminică: Închis
+        </div>
+        <a href="data:text/vcard;charset=utf-8,BEGIN%3AVCARD%0AVERSION%3A3.0%0AFN%3AGlamour%20Hairsalon%20Cluj%0AORG%3AGlamour%20Hairsalon%0ATEL%3BTYPE%3DWORK%2CVOICE%3A%2B40727717751%0AADR%3BTYPE%3DWORK%3A%3B%3BCalea%20Dorobantilor%20105%3BCluj-Napoca%3BCluj%3B400689%3BRomania%0AURL%3Ahttps%3A%2F%2Fwww.facebook.com%2Fprofile.php%3Fid%3D100024394373895%0ANOTE%3AProgram%3A%20L-V%2008%3A00-20%3A00%2C%20S%2008%3A00-15%3A00%0AEND%3AVCARD" download="Glamour_Hairsalon.vcf" class="btn btn-gold">
+            <div class="btn-left"><span class="icon">📇</span> Salvează contactul în telefon</div>
+            <span>➔</span>
+        </a>
+        <a href="https://www.google.com/maps/place//data=!4m2!3m1!19sChIJd4VPXjENSUcRaGDoO09A53g" target="_blank" class="btn">
+            <div class="btn-left"><span class="icon">⭐</span> Lasă-ne un review pe Google</div>
+            <span>➔</span>
+        </a>
+        <button onclick="toggleServices()" class="btn">
+            <div class="btn-left"><span class="icon">📋</span> Vezi lista de servicii și prețuri</div>
+            <span id="arrow">▼</span>
+        </button>
+        <div id="services-panel">
+            <h3>Lista de Servicii (Orientativ)</h3>
+            <div class="service-item"><span>✂️ Tuns bărbați + spălat</span> <span class="price">60 RON</span></div>
+            <div class="service-item"><span>🧔 Aranjat barbă</span> <span class="price">35 RON</span></div>
+            <div class="service-item"><span>💇‍♀️ Tuns & Coafat damă</span> <span class="price">90 - 140 RON</span></div>
+            <div class="service-item"><span>💆‍♂️ Masaj capilar / relaxare</span> <span class="price">50 RON</span></div>
+        </div>
+        <div class="quick-links">
+            <a href="tel:+40727717751" class="btn-small">📞 Sună acum</a>
+            <a href="https://www.facebook.com/profile.php?id=100024394373895" target="_blank" class="btn-small">📘 Facebook</a>
+        </div>
+        <div class="footer">GLAMOUR HAIRSALON • Cluj-Napoca</div>
+    </div>
+    <script>
+        function toggleServices() {
+            var panel = document.getElementById("services-panel");
+            var arrow = document.getElementById("arrow");
+            if (panel.style.display === "block") {
+                panel.style.display = "none";
+                arrow.innerText = "▼";
+            } else {
+                panel.style.display = "block";
+                arrow.innerText = "▲";
+            }
+        }
+    </script>
+</body>
+</html>
